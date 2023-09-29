@@ -7,12 +7,16 @@ Created on Fri Sep 29 10:57:02 2023
 import pandas as pd
 import os
 from config.definitions import ROOT_DIR
+import lightgbm as lgb
+import numpy as np
+from sklearn.model_selection import train_test_split
+from sklearn.metrics import roc_auc_score
+import matplotlib.pylab as plt
+
 load_path = os.path.join(ROOT_DIR, "house-prices-advanced-regression-techniques")
-train = pd.read_csv(load_path+"/train.csv")
+df_train = pd.read_csv(load_path+"/train.csv")
 
 
 
 
-
-from lightgbm import LGBMClassifier
-model = LGBMClassifier()
+# model = LGBMRegressor()
